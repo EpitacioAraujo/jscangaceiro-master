@@ -11,8 +11,14 @@ class NegociacaoController {
   adiciona(event) {
     event.preventDefault();
 
-    console.log(this._inputData);
-    console.log(parseInt(this._inputQuantidade));
-    console.log(parseFloat(this._inputValor));
+    let negociacao = new Negociacao(
+      this._inputData.value
+        .split("-")
+        .map((item, indice) => item - (indice % 2)),
+      parseInt(this._inputQuantidade.value),
+      parseFloat(this._inputValor.value)
+    );
+
+    console.log(negociacao);
   }
 }
