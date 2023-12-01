@@ -11,6 +11,13 @@ Timeline do que já foi feito:
 
 - Cap. 4: Vemos que nosso modelo não era imutavel (caracteristica desejada nessa situação), logo percebemos que deveriamos implementar um série de tecnicas para prevenir que auterações sejam feitas diretamente no modelo, esse conjunto de tecnicas ficaram chamadas de "programação defenciva".
 
-- Cap. 5: Estamos nesse captulo. (Pág 106), implantação de classe helper para trabalharmos com datas, podendo converter de texto para Data object e vice-versa.
+- Cap. 5:
+  Implantação de classe helper para trabalharmos com datas, podendo converter de texto para Data object e vice-versa.
+
   Para validação das datas utilizamos a boa prática de fail first, onde testamos os parametros recebidos e se caso não estajam no formato desejado uma exceção é impressa no console para que o programador saiba da existência do erro.
+
   Para validarmos um string de data no formato aaaa-mm-dd foi-se implantado um metodo regex que valida a string neste exato formato.
+
+  Criamos uma novo modelo Negociacoes responsavel por armazenas uma lista de todas as nossas negociações, e permiti lermos uma copia da lista original assim impossibilitando a manipulação da mesma
+
+- Cap. 6: (pag 121)
