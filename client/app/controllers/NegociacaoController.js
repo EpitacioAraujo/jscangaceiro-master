@@ -1,4 +1,3 @@
-// TODO: 69
 class NegociacaoController {
   constructor() {
     let $ = document.querySelector.bind(document);
@@ -8,11 +7,14 @@ class NegociacaoController {
     this._inputValor = $("#valor");
 
     this._negociacoes = new Negociacoes();
+
+    this._negociacoesView = new NegociacoesView("#negociacoes");
+    this._negociacoesView.update(this._negociacoes);
   }
 
   _limpaFormulario() {
     this._inputData.value = "";
-    this._inputQuantidade = 1;
+    this._inputQuantidade.value = 1;
     this._inputValor.value = 0.0;
     this._inputData.focus();
   }
@@ -29,7 +31,7 @@ class NegociacaoController {
     event.preventDefault();
 
     this._negociacoes.adiciona(this._criaNegociacao());
-
+    this._negociacoesView.update(this._negociacoes);
     this._limpaFormulario();
   }
 }
